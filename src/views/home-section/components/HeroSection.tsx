@@ -40,7 +40,6 @@ export default function HeroSection(): JSX.Element {
     { label: "POLICIES", active: false, path: "/policies" },
     { label: "CONTACT US", active: false, path: "/contact-us" },
   ];
-  console.log(window.innerWidth)
   return (
     <section className="relative w-full h-[208px] md:h-[800px]">
       {backgrounds.map((background, index) => (
