@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'Branch';
+  src: url('/fonts/Branch.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --app-background: rgba(249, 250, 252, 1);
+  --body-font-family: "Work Sans", Helvetica;
+  --body-font-size: 13px;
+  --body-font-style: normal;
+  --body-font-weight: 400;
+  --body-letter-spacing: -0.26px;
+  --body-line-height: normal;
+  --desktop-body-para-20-font-family: "Clash Display", Helvetica;
+  --desktop-body-para-20-font-size: 20px;
+  --desktop-body-para-20-font-style: normal;
+  --desktop-body-para-20-font-weight: 400;
+  --desktop-body-para-20-letter-spacing: 0px;
+  --desktop-body-para-20-line-height: 150%;
+  --desktop-body-para-20-med-font-family: "Clash Display", Helvetica;
+  --desktop-body-para-20-med-font-size: 20px;
+  --desktop-body-para-20-med-font-style: normal;
+  --desktop-body-para-20-med-font-weight: 500;
+  --desktop-body-para-20-med-letter-spacing: 0px;
+  --desktop-body-para-20-med-line-height: 150%;
+  --desktop-body-paragraph-med-font-family: "Clash Display", Helvetica;
+  --desktop-body-paragraph-med-font-size: 16px;
+  --desktop-body-paragraph-med-font-style: normal;
+  --desktop-body-paragraph-med-font-weight: 500;
+  --desktop-body-paragraph-med-letter-spacing: 0px;
+  --desktop-body-paragraph-med-line-height: 150%;
+  --desktop-body-paragraph-reg-font-family: "Clash Display", Helvetica;
+  --desktop-body-paragraph-reg-font-size: 16px;
+  --desktop-body-paragraph-reg-font-style: normal;
+  --desktop-body-paragraph-reg-font-weight: 400;
+  --desktop-body-paragraph-reg-letter-spacing: 0px;
+  --desktop-body-paragraph-reg-line-height: 150%;
+  --desktop-body-subtitle-reg-font-family: "Clash Display", Helvetica;
+  --desktop-body-subtitle-reg-font-size: 12px;
+  --desktop-body-subtitle-reg-font-style: normal;
+  --desktop-body-subtitle-reg-font-weight: 400;
+  --desktop-body-subtitle-reg-letter-spacing: 0px;
+  --desktop-body-subtitle-reg-line-height: 150%;
+  --desktop-header-h2-font-family: "Branch", Helvetica;
+  --desktop-header-h2-font-size: 60px;
+  --desktop-header-h2-font-style: normal;
+  --desktop-header-h2-font-weight: 400;
+  --desktop-header-h2-letter-spacing: 0px;
+  --desktop-header-h2-line-height: 150%;
+  --desktop-header-h3-font-family: "Branch", Helvetica;
+  --desktop-header-h3-font-size: 28px;
+  --desktop-header-h3-font-style: normal;
+  --desktop-header-h3-font-weight: 400;
+  --desktop-header-h3-letter-spacing: 0px;
+  --desktop-header-h3-line-height: 150%;
+  --fuschia-100: rgba(239, 93, 168, 1);
+  --fuschia-60: rgba(252, 221, 236, 1);
+  --fuschia-80: rgba(241, 120, 182, 1);
+  --header-1-font-family: "Work Sans", Helvetica;
+  --header-1-font-size: 34px;
+  --header-1-font-style: normal;
+  --header-1-font-weight: 700;
+  --header-1-letter-spacing: -0.68px;
+  --header-1-line-height: normal;
+  --header-2-font-family: "Work Sans", Helvetica;
+  --header-2-font-size: 20px;
+  --header-2-font-style: normal;
+  --header-2-font-weight: 700;
+  --header-2-letter-spacing: -0.4px;
+  --header-2-line-height: normal;
+  --iris-100: rgba(93, 95, 239, 1);
+  --iris-60: rgba(165, 166, 246, 1);
+  --iris-80: rgba(120, 121, 241, 1);
+  --light-pink: rgba(254, 226, 227, 1);
+  --neutral-2: rgba(229, 229, 229, 1);
+  --neutralblack: rgba(0, 0, 0, 1);
+  --neutralwhite: rgba(255, 255, 255, 1);
+  --pink: rgba(245, 163, 183, 1);
+  --red: rgba(186, 22, 64, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
