@@ -10,8 +10,14 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { MenuIcon, X as XIcon } from "lucide-react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -20,13 +26,13 @@ export default function HeroSection(): JSX.Element {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   const router = useRouter();
   const pathname = usePathname();
-
+  const [isHovered, setIsHovered] = useState(false);
   const backgrounds = [bg, bg2, bg3];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -48,8 +54,8 @@ export default function HeroSection(): JSX.Element {
           className="absolute inset-0 h-full w-full transition-opacity duration-1000"
           style={{
             backgroundImage: `url(${background.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             opacity: currentBgIndex === index ? 1 : 0,
           }}
         >
@@ -62,8 +68,8 @@ export default function HeroSection(): JSX.Element {
 
       {/* Header content */}
       <div className="relative z-[40] flex md:hidden pt-6 px-6 justify-between w-full">
-      <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
-        <MobileNavigation/>
+        <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
+        <MobileNavigation />
       </div>
       <div className="relative hidden md:flex items-center justify-between md:px-[40px] lg:px-[162px] pt-6">
         {/* Logo */}
@@ -75,10 +81,10 @@ export default function HeroSection(): JSX.Element {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.label} className="cursor-pointer">
                 <NavigationMenuLink
-                  className={`font-desktop-body-paragraph-reg text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] whitespace-nowrap ${
+                  href={item.path}
+                  className={`hover:text-pink-300 transition-colors font-desktop-body-paragraph-reg text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] whitespace-nowrap ${
                     pathname === item.path ? "text-[#F5A3B7]" : "text-white"
                   }`}
-                  onClick={() => router.push(item.path)}
                 >
                   {item.label}
                 </NavigationMenuLink>
@@ -86,9 +92,43 @@ export default function HeroSection(): JSX.Element {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <Link href="https://www.topcardsolution.com/" target="_blank" className="mx-2">
+          <button
+            className="relative overflow-hidden rounded-full px-4 py-1.5 transition-all duration-300 ease-in-out"
+            style={{
+              backgroundColor: isHovered
+                ? "rgba(0, 0, 0, 0.7)"
+                : "rgba(0, 0, 0, 0.5)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(5px)",
+              boxShadow: isHovered
+                ? "0 4px 15px rgba(0, 0, 0, 0.2)"
+                : "0 2px 10px rgba(0, 0, 0, 0.1)",
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <span
+              className="font-medium tracking-wider font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]"
+              style={{
+                color: "white",
+                fontSize: "14px",
+                letterSpacing: "1px",
+                transform: isHovered ? "scale(1.05)" : "scale(1)",
+                display: "inline-block",
+                transition: "transform 0.3s ease",
+              }}
+            >
+              GIFT CARD
+            </span>
+          </button>
+        </Link>
 
-        {/* Book Now Button */} 
-        <Button className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]">
+        {/* Book Now Button */}
+        <Button
+          onClick={() => router.push("/contact-us")}
+          className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]"
+        >
           BOOK NOW
         </Button>
       </div>
@@ -110,40 +150,65 @@ function MobileNavigation(): JSX.Element {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger>
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-<path d="M5 10H35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5 20H35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5 30H35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+        >
+          <path
+            d="M5 10H35"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M5 20H35"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M5 30H35"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </SheetTrigger>
       <SheetContent side="left">
-      <div className="bg-neutralblack h-full flex flex-col items-end p-6 pb-[410px]">
-      <SheetClose className="mb-4">
-        <XIcon className="w-[42px] h-[42px] text-white" />
-      </SheetClose>
-      <nav className="flex flex-col items-start gap-4 w-full">
-        {navigationItems.map((item, index) => (
-          <React.Fragment key={item.label}>
-            <button className="flex items-center w-full pb-4"
-            onClick={() => {
-              router.push(item.path);
-              setIsOpen(false);
-            }}
-            >
-              <span className="font-mobile-body-para-16-reg text-white text-[16px] leading-[150%]">
-                {item.label}
-              </span>
-            </button>
-            {index < navigationItems.length - 1 && (
-              <Separator className="w-full border-text-6 border-b-[0.5px]" />
-            )}
-          </React.Fragment>
-        ))}
-        <Button className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]">
-            BOOK NOW
-        </Button>
-      </nav>
-    </div>
+        <div className="bg-neutralblack h-full flex flex-col items-end p-6 pb-[410px]">
+          <SheetClose className="mb-4">
+            <XIcon className="w-[42px] h-[42px] text-white" />
+          </SheetClose>
+          <nav className="flex flex-col items-start gap-4 w-full">
+            {navigationItems.map((item, index) => (
+              <React.Fragment key={item.label}>
+                <button
+                  className="flex items-center w-full pb-4"
+                  onClick={() => {
+                    router.push(item.path);
+                    setIsOpen(false);
+                  }}
+                >
+                  <span className="font-mobile-body-para-16-reg text-white text-[16px] leading-[150%]">
+                    {item.label}
+                  </span>
+                </button>
+                {index < navigationItems.length - 1 && (
+                  <Separator className="w-full border-text-6 border-b-[0.5px]" />
+                )}
+              </React.Fragment>
+            ))}
+            <Button className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]">
+              BOOK NOW
+            </Button>
+          </nav>
+        </div>
       </SheetContent>
     </Sheet>
   );
