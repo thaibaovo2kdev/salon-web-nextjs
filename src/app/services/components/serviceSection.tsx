@@ -7,6 +7,7 @@ import { Snowflake } from "lucide-react";
 import React, { useState } from "react";
 import ice1 from "@/assets/images/ice1.png";
 import service1 from "@/assets/images/services/service-1.png";
+
 export default function ServicesSection() {
   const navItems = [
     { name: "HOME", active: false },

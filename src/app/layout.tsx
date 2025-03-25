@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/sonner';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import DiscountPopupSection from '@/views/home-section/components/DiscountPopup';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <DiscountPopupSection />
         {/* <Header />
         <main className='min-h-[calc(100vh-64px-100px)] md:min-h-[calc(100vh-64px-68px)]'> */}
           {children}

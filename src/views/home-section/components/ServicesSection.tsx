@@ -10,20 +10,25 @@ import home4 from "@/assets/images/home-4.png";
 import homee from "@/assets/images/home-e.png";
 import homeTru from "@/assets/images/home-tru.png";
 import homeDual from "@/assets/images/home-dual.png";
+import service2 from "@/assets/images/service-2.png";
+import service3 from "@/assets/images/service-3.png";
 export default function ServicesSection(): JSX.Element {
   // Service categories data
   const serviceCategories = [
     {
       title: "Innovation",
       backgroundClass: "bg-[url(/rectangle-5.svg)]",
+      image: service1.src,
     },
     {
       title: "Services",
       backgroundClass: "bg-[url(/image.svg)]",
+      image: service2.src,
     },
     {
       title: "Gallery",
       backgroundClass: "bg-[url(/rectangle-5-2.svg)]",
+      image: service3.src,
     },
   ];
 
@@ -128,7 +133,7 @@ export default function ServicesSection(): JSX.Element {
               <img
                 className="flex-none w-full bg-contain bg-no-repeat"
                 alt={`${category.title} icon`}
-                src={service1.src}
+                src={category.image}
               />
             </div>
           </div>

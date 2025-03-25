@@ -21,9 +21,9 @@ export default function TestimonialsSection(): JSX.Element {
 
   // Social media links
   const socialLinks = [
-    { icon: <Facebook className="h-6 w-6" />, url: "#" },
-    { icon: <Instagram className="h-6 w-6" />, url: "#" },
-    { icon: <Twitter className="h-6 w-6" />, url: "#" },
+    { icon: <Facebook className="h-6 w-6" />, url: "https://www.facebook.com/beautiquenailspa45150/" },
+    { icon: <Instagram className="h-6 w-6" />, url: "https://www.instagram.com/beautiquenailspa45150/" },
+    { icon: <Twitter className="h-6 w-6" />, url: "https://twitter.com/beautique45150" },
   ];
 
   return (
@@ -140,10 +140,10 @@ export default function TestimonialsSection(): JSX.Element {
             <Separator className="bg-white/20 mb-4" />
             <div className="flex justify-between items-center text-white">
               <div className="flex gap-12">
-                <a href="#" className="hover:underline">
+                <a href="/policies" className="hover:underline">
                   Privacy policy
                 </a>
-                <a href="#" className="hover:underline">
+                <a href="/policies" className="hover:underline">
                   Terms &amp; conditions
                 </a>
               </div>
