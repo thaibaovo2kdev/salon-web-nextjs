@@ -19,16 +19,19 @@ export default function ServicesSection(): JSX.Element {
       title: "Innovation",
       backgroundClass: "bg-[url(/rectangle-5.svg)]",
       image: service1.src,
+      link: "/innovation",
     },
     {
       title: "Services",
       backgroundClass: "bg-[url(/image.svg)]",
       image: service2.src,
+      link: "/services",
     },
     {
       title: "Gallery",
       backgroundClass: "bg-[url(/rectangle-5-2.svg)]",
       image: service3.src,
+      link: "/gallery",
     },
   ];
 
@@ -122,7 +125,8 @@ export default function ServicesSection(): JSX.Element {
         {serviceCategories.map((category, index) => (
           <div
             key={index}
-            className={`w-full h-[160px] md:h-[400px] ${category.backgroundClass} bg-[100%_100%]`} 
+            className={`w-full h-[160px] md:h-[400px] ${category.backgroundClass} bg-[100%_100%] cursor-pointer hover:opacity-80 transition-opacity duration-300`} 
+            onClick={() => window.location.href = category.link}
           >
             <div className="flex relative w-full max-w-[1116px] items-center justify-between px-0 mx-auto">
               <div className="flex items-center absolute top-[40px] left-[100px]">
