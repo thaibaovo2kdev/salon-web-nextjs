@@ -10,6 +10,10 @@ export interface IGiftCard {
   imageUrl: string;
 }
 
+export interface IHomeStore {
+  isOpenDiscountPopup: boolean;
+}
+
 export interface ICreditCardFormData {
   cardHolderName: string;
   cardNumber: string;
@@ -35,6 +39,7 @@ export interface IGiftCardStore {
   formData: IGiftCardFormData;
   creditCard: ICreditCardFormData;
   view: 'list' | 'form' | 'visa' | 'home'; // Trạng thái hiện tại
+  isOpenDiscountPopup: boolean;
 }
 
 export interface IGiftCardActions {
@@ -43,6 +48,7 @@ export interface IGiftCardActions {
   setCreditCardData: (creditCard: Partial<ICreditCardFormData>) => void;
   resetData: () => void;
   setView: (view: 'list' | 'form' | 'visa' | 'home') => void;
+  setIsOpenDiscountPopup: (isOpen: boolean) => void;
 }
 
 export const INITIAL_STORE_VALUE: IGiftCardStore = {
@@ -66,6 +72,7 @@ export const INITIAL_STORE_VALUE: IGiftCardStore = {
     expirationDate: '',
   },
   view: 'home',
+  isOpenDiscountPopup: false,
 };
 
 export const useGiftCardStore = create<IGiftCardStore & IGiftCardActions>()(
@@ -83,12 +90,18 @@ export const useGiftCardStore = create<IGiftCardStore & IGiftCardActions>()(
         state.view = 'visa';
       });
     },
+    setIsOpenDiscountPopup(isOpen) {
+      set((state) => {
+        state.isOpenDiscountPopup = isOpen;
+      });
+    },
     resetData() {
       set((state) => {
         state.selectedGiftCard = null;
         state.creditCard = INITIAL_STORE_VALUE.creditCard;
         state.formData = INITIAL_STORE_VALUE.formData;
         state.view = INITIAL_STORE_VALUE.view;
+        state.isOpenDiscountPopup = INITIAL_STORE_VALUE.isOpenDiscountPopup;
       });
     },
     setCreditCardData(creditCard) {

@@ -5,10 +5,21 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import React, { useState } from "react";
 import logo from "@/assets/images/logo.png";
-
-
+import { useGiftCardStore } from "@/store/giftcard-store";
 export default function DiscountPopupSection(): JSX.Element {
-    const [isOpen, setIsOpen] = useState(true);
+    const { isOpenDiscountPopup, setIsOpenDiscountPopup } = useGiftCardStore();
+    const hasSeenPopup = typeof window !== "undefined" && localStorage.getItem('hasSeenDiscountPopup') === 'true';
+    React.useEffect(() => {
+        if (!hasSeenPopup) {
+            setIsOpenDiscountPopup(true);
+        }
+    }, [setIsOpenDiscountPopup]);
+
+    const handleClosePopup = () => {
+        setIsOpenDiscountPopup(false);
+        localStorage.setItem('hasSeenDiscountPopup', 'true');
+    };
+
   const discountData = {
     logo: logo.src,
     welcomeText: "We're so happy you're here!",
@@ -19,7 +30,7 @@ export default function DiscountPopupSection(): JSX.Element {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpenDiscountPopup} >
       <DialogContent className="p-0 border-none max-w-[736px] bg-transparent px-4 md:px-0">
         <Card className="bg-red rounded-2xl w-full overflow-hidden">
           <div className="relative w-full flex justify-center py-16 px-8">
@@ -76,7 +87,7 @@ export default function DiscountPopupSection(): JSX.Element {
                   variant="link"
                   className="text-white [font-family:'Clash_Display-Regular',Helvetica] 
                     font-normal text-base tracking-[0] leading-6 underline"
-                    onClick={() => setIsOpen(false)}
+                    onClick={handleClosePopup}
                 >   
                   {discountData.declineText}
                 </Button>
@@ -86,7 +97,7 @@ export default function DiscountPopupSection(): JSX.Element {
               variant="ghost"
               className="absolute top-6 right-6 p-0 h-12 w-12 rounded-full text-white hover:bg-white/10"
               aria-label="Close"
-              onClick={() => setIsOpen(false)}
+              onClick={handleClosePopup}
             >
               <X className="h-8 w-8" />
             </Button>
