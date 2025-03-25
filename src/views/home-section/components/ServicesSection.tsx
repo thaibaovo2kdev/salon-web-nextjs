@@ -103,7 +103,7 @@ export default function ServicesSection(): JSX.Element {
         <img className="w-[73px] h-[73px]" alt="Ice crystals" src={ice1.src} />
 
         <div className="flex flex-col items-center gap-2 w-full">
-          <h3 className="w-full font-desktop-header-h3 font-[number:var(--desktop-header-h3-font-weight)] text-red text-[length:var(--desktop-header-h3-font-size)] text-center tracking-[var(--desktop-header-h3-letter-spacing)] leading-[var(--desktop-header-h3-line-height)] [font-style:var(--desktop-header-h3-font-style)]">
+          <h3 className="w-full px-6 md:px-0 font-desktop-header-h3 font-[number:var(--desktop-header-h3-font-weight)] text-red text-[length:var(--desktop-header-h3-font-size)] text-center tracking-[var(--desktop-header-h3-letter-spacing)] leading-[var(--desktop-header-h3-line-height)] [font-style:var(--desktop-header-h3-font-style)]">
             When it comes to nails, you deserve to feel your best
           </h3>
 
@@ -129,7 +129,7 @@ export default function ServicesSection(): JSX.Element {
             onClick={() => window.location.href = category.link}
           >
             <div className="flex relative w-full max-w-[1116px] items-center justify-between px-0 mx-auto">
-              <div className="flex items-center absolute top-[40px] left-[100px]">
+              <div className="flex items-center absolute top-[40px] w-full justify-center md:justify-start md:left-[100px]">
                 <h2 className="font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-neutralwhite text-[40px] text-[length:var(--desktop-header-h2-font-size)] tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] whitespace-nowrap [font-style:var(--desktop-header-h2-font-style)]">
                   {category.title}
                 </h2>
@@ -149,10 +149,10 @@ export default function ServicesSection(): JSX.Element {
         <div className="grid grid-cols-2 md:flex justify-center items-center gap-8 md:gap-[120px] py-0 md:py-[90px]">
           {statistics.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
-              <h2 className="text-center font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-black text-[40px] text-[length:var(--desktop-header-h2-font-size)] tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
+              <h2 className="text-center font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-black text-[40px] md:text-[length:var(--desktop-header-h2-font-size)] tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
                 {stat.value}
               </h2>
-              <p className="font-desktop-body-para-20 font-[number:var(--desktop-body-para-20-font-weight)] text-black text-[length:var(--desktop-body-para-20-font-size)] tracking-[var(--desktop-body-para-20-letter-spacing)] leading-[var(--desktop-body-para-20-line-height)] [font-style:var(--desktop-body-para-20-font-style)]">
+              <p className="font-desktop-body-para-20 text-center md:text-left min-h-[60px] font-[number:var(--desktop-body-para-20-font-weight)] text-[20px] md:text-black text-[length:var(--desktop-body-para-20-font-size)] tracking-[var(--desktop-body-para-20-letter-spacing)] leading-[var(--desktop-body-para-20-line-height)] [font-style:var(--desktop-body-para-20-font-style)]">
                 {stat.label}
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function ServicesSection(): JSX.Element {
 
       {/* Who We Are Section */}
       <div className="flex flex-col w-full gap-6">
-        <h2 className="w-full font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
+        <h2 className="w-full px-6 md:px-0 font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
           Who We Are
         </h2>
         <p className="w-full px-6 md:px-0 font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] text-black text-[length:var(--desktop-body-paragraph-reg-font-size)] text-center tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] [font-style:var(--desktop-body-paragraph-reg-font-style)]">
@@ -195,8 +195,8 @@ export default function ServicesSection(): JSX.Element {
       </div>
 
       {/* Facts Section */}
-      <div className="w-full h-[400px] bg-[url(/image-15.png)]" style={{ backgroundImage: `url(${homebg3.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="flex flex-col max-w-[546px] gap-2 py-[51px] mx-auto">
+      <div className="w-full h-[500px] md:h-[400px] bg-[url(/image-15.png)]" style={{ backgroundImage: `url(${homebg3.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="flex flex-col max-w-[546px] gap-2 py-6 md:py-[51px] mx-auto">
           <h2 className="w-full text-center md:text-left font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
             Facts
           </h2>
@@ -253,8 +253,8 @@ export default function ServicesSection(): JSX.Element {
         <h2 className="w-full font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
           Salon Tour
         </h2>
-        <div className="w-full mx-4 md:mx-0 h-[300px] md:h-[628px] bg-neutral-2 flex items-center justify-center rounded-2xl">
-          <video src={video} autoPlay muted loop className="w-full h-full object-cover" />
+        <div className="w-full mx-0 md:mx-0 max-w-screen md:h-[628px] bg-neutral-2 flex items-center justify-center rounded-2xl">
+          <video src={video} autoPlay muted loop className="w-full max-w-screen h-full object-cover" />
         </div>
       </div>
     </section>
