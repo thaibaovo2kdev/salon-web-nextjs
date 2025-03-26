@@ -126,7 +126,9 @@ export default function HeroSection(): JSX.Element {
 
         {/* Book Now Button */}
         <Button
-          onClick={() => router.push("/contact-us")}
+          onClick={() => {
+            window !== undefined && window.open("https://lk.macmarketing.us/beautiquebooking", "_blank")
+          }}
           className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]"
         >
           BOOK NOW
