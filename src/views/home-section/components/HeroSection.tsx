@@ -66,7 +66,7 @@ export default function HeroSection(): JSX.Element {
           </div>
         </div>
       ))}
-      <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-full">
+      <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
         <a href="tel:+15132687777" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
         <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a>
 
