@@ -16,7 +16,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon, X as XIcon } from "lucide-react";
+import { MapPinIcon, MenuIcon, PhoneIcon, X as XIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -28,13 +28,14 @@ export default function HeroSection(): JSX.Element {
   const pathname = usePathname();
   const [isHovered, setIsHovered] = useState(false);
   const backgrounds = [bg, bg2, bg3];
+  const [onScroll, setOnScroll] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
+    const handleScroll = () => {
+      setOnScroll(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Navigation menu items data
@@ -42,12 +43,12 @@ export default function HeroSection(): JSX.Element {
     { label: "HOME", active: true, path: "/" },
     { label: "INNOVATION", active: false, path: "/innovation" },
     { label: "SERVICES", active: false, path: "/services" },
-    { label: "GALLERY", active: false, path: "/gallery" },
+    // { label: "GALLERY", active: false, path: "/gallery" },
     { label: "POLICIES", active: false, path: "/policies" },
     { label: "CONTACT US", active: false, path: "/contact-us" },
   ];
   return (
-    <section className="relative w-full h-[208px] md:h-[800px]">
+    <section className="relative w-full h-[208px] md:h-[500px]">
       {backgrounds.map((background, index) => (
         <div
           key={index}
@@ -65,13 +66,18 @@ export default function HeroSection(): JSX.Element {
           </div>
         </div>
       ))}
+      <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between w-full">
+        <a href="tel:+15132687777" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
+        <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a>
+
+      </div>
 
       {/* Header content */}
-      <div className="relative z-[40] flex md:hidden pt-6 px-6 justify-between w-full">
+      <div className={`fixed top-0 left-0 right-0 z-[99] flex md:hidden pt-6 px-6 justify-between w-full ${onScroll ? "bg-black/50 pb-8 transition-all duration-300 ease-in-out" : "bg-transparent transition-all duration-300 ease-out"}`}>
         <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
         <MobileNavigation />
       </div>
-      <div className="relative hidden md:flex items-center justify-between md:px-[40px] lg:px-[162px] pt-6">
+      <div className={`fixed z-[99] top-0 left-0 right-0 hidden md:flex items-center justify-between md:px-[40px] lg:px-[162px] pt-6 ${onScroll ? "bg-black/50 pb-8 transition-all duration-300 ease-in-out" : "bg-transparent transition-all duration-300 ease-out"}`}>
         {/* Logo */}
         <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
 

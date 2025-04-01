@@ -121,7 +121,7 @@ export default function ServicesSection(): JSX.Element {
       </div>
 
       {/* Service Categories */}
-      <div className="flex flex-col gap-4 w-full max-w-[1116px]">
+      {/* <div className="flex flex-col gap-4 w-full max-w-[1116px]">
         {serviceCategories.map((category, index) => (
           <div
             key={index}
@@ -142,10 +142,33 @@ export default function ServicesSection(): JSX.Element {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
-      {/* Statistics Section */}
-      <div className="w-full h-[300px] bg-[url(/rectangle-23.png)] bg-cover " style={{ backgroundImage: `url(${homebg2.src})` }}>
+      {/* Who We Are Section */}
+      <div className="flex flex-col w-full gap-6">
+        <h2 className="w-full px-6 md:px-0 font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
+          Who We Are
+        </h2>
+        <p className="w-full px-6 md:px-8 font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] text-black text-[length:var(--desktop-body-paragraph-reg-font-size)] text-center tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] [font-style:var(--desktop-body-paragraph-reg-font-style)]">
+          In 2003, we became one of the first nail salons to open in Milford,
+          Ohio (Nails salon in Milford). We understand that each client who
+          comes to us is unique, and we strive for perfection with each one. In
+          2022, our salon expanded, allowing us to provide our clients with the
+          next level of service. Our promise is the same now as it was over 19
+          years ago, now with bigger and better facilities for all your nail
+          care needs.
+        </p>
+      </div>
+      <div className="flex flex-col w-full max-w-[1118px] gap-6 mb-20">
+        {/* <h2 className="w-full font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
+          Salon Tour
+        </h2> */}
+        <div className="w-full mx-0 md:mx-0 max-w-screen md:h-[628px] bg-neutral-2 flex items-center justify-center rounded-2xl">
+          <video src={video} autoPlay muted loop className="w-full max-w-screen h-full object-cover" />
+        </div>
+      </div>
+            {/* Statistics Section */}
+            <div className="w-full h-[300px] bg-[url(/rectangle-23.png)] bg-cover " style={{ backgroundImage: `url(${homebg2.src})` }}>
         <div className="grid grid-cols-2 md:flex justify-center items-center gap-8 md:gap-[120px] py-0 md:py-[90px]">
           {statistics.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -160,39 +183,6 @@ export default function ServicesSection(): JSX.Element {
         </div>
       </div>
 
-      {/* Who We Are Section */}
-      <div className="flex flex-col w-full gap-6">
-        <h2 className="w-full px-6 md:px-0 font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
-          Who We Are
-        </h2>
-        <p className="w-full px-6 md:px-0 font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] text-black text-[length:var(--desktop-body-paragraph-reg-font-size)] text-center tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] [font-style:var(--desktop-body-paragraph-reg-font-style)]">
-          In 2003, we became one of the first nail salons to open in Milford,
-          Ohio (Nails salon in Milford). We understand that each client who
-          comes to us is unique, and we strive for perfection with each one. In
-          2022, our salon expanded, allowing us to provide our clients with the
-          next level of service. Our promise is the same now as it was over 19
-          years ago, now with bigger and better facilities for all your nail
-          care needs.
-        </p>
-      </div>
-
-      {/* Testimonial Section */}
-      <div className="flex flex-col w-full max-w-[1116px] items-center gap-6">
-        <h2 className="w-full font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
-          Testimonial
-        </h2>
-        <div className=" flex flex-col md:flex-row items-center gap-6 w-full">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-light-pink rounded-2xl">
-              <CardContent className="p-6">
-                <p className="w-[308px] min-h-[180px] font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] text-black text-[length:var(--desktop-body-paragraph-reg-font-size)] text-center tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] [font-style:var(--desktop-body-paragraph-reg-font-style)]">
-                  {testimonial.text}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
 
       {/* Facts Section */}
       <div className="w-full h-[500px] md:h-[400px] bg-[url(/image-15.png)]" style={{ backgroundImage: `url(${homebg3.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -247,16 +237,25 @@ export default function ServicesSection(): JSX.Element {
           ))}
         </div>
       </div>
-
-      {/* Salon Tour Section */}
-      <div className="flex flex-col w-full max-w-[1118px] gap-6 mb-20">
+      {/* Testimonial Section */}
+      <div className="flex flex-col w-full max-w-[1116px] items-center gap-6 mb-8">
         <h2 className="w-full font-desktop-header-h2 font-[number:var(--desktop-header-h2-font-weight)] text-red text-[40px] text-[length:var(--desktop-header-h2-font-size)] text-center tracking-[var(--desktop-header-h2-letter-spacing)] leading-[var(--desktop-header-h2-line-height)] [font-style:var(--desktop-header-h2-font-style)]">
-          Salon Tour
+          Testimonial
         </h2>
-        <div className="w-full mx-0 md:mx-0 max-w-screen md:h-[628px] bg-neutral-2 flex items-center justify-center rounded-2xl">
-          <video src={video} autoPlay muted loop className="w-full max-w-screen h-full object-cover" />
+        <div className=" flex flex-col md:flex-row items-center gap-6 w-full">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="bg-light-pink rounded-2xl">
+              <CardContent className="p-6">
+                <p className="w-[308px] min-h-[180px] font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] text-black text-[length:var(--desktop-body-paragraph-reg-font-size)] text-center tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] [font-style:var(--desktop-body-paragraph-reg-font-style)]">
+                  {testimonial.text}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
+
+      {/* Salon Tour Section */}
     </section>
   );
 }

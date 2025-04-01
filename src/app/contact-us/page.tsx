@@ -98,11 +98,11 @@ export default function ContactUs(): JSX.Element {
                           src={location.image}
                         />
                         <div className="flex flex-col items-center gap-4 w-full">
-                          <div className="flex flex-col items-center w-full">
+                          <div className="flex flex-col w-full pl-20">
                             <p
                               className="text-red font-desktop-body-paragraph-reg 
                                 text-[length:var(--desktop-body-paragraph-reg-font-size)] 
-                                text-center 
+                                text-left
                                 tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] 
                                 leading-[var(--desktop-body-paragraph-reg-line-height)]"
                             >
@@ -110,8 +110,7 @@ export default function ContactUs(): JSX.Element {
                             </p>
                             <p
                               className="text-neutralblack font-desktop-body-para-20 
-                                text-[length:var(--desktop-body-para-20-font-size)] 
-                                text-center 
+                                text-left
                                 tracking-[var(--desktop-body-para-20-letter-spacing)] 
                                 leading-[var(--desktop-body-para-20-line-height)]"
                             >
@@ -120,18 +119,18 @@ export default function ContactUs(): JSX.Element {
                             <p
                               className="text-neutralblack font-desktop-body-paragraph-reg 
                                 text-[length:var(--desktop-body-paragraph-reg-font-size)] 
-                                text-center 
+                                text-left
                                 tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] 
                                 leading-[var(--desktop-body-paragraph-reg-line-height)]"
                             >
                               {location.addressNote}
                             </p>
                           </div>
-                          <div className="flex flex-col items-center w-full">
+                          <div className="flex flex-col w-full pl-20">
                             <p
                               className="text-red font-desktop-body-paragraph-reg 
                                 text-[length:var(--desktop-body-paragraph-reg-font-size)] 
-                                text-center 
+                                text-left 
                                 tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] 
                                 leading-[var(--desktop-body-paragraph-reg-line-height)]"
                             >
@@ -139,8 +138,7 @@ export default function ContactUs(): JSX.Element {
                             </p>
                             <p
                               className="text-neutralblack font-desktop-body-para-20 
-                                text-[length:var(--desktop-body-para-20-font-size)] 
-                                text-center 
+                                text-left 
                                 tracking-[var(--desktop-body-para-20-letter-spacing)] 
                                 leading-[var(--desktop-body-para-20-line-height)]"
                             >
@@ -148,7 +146,6 @@ export default function ContactUs(): JSX.Element {
                             </p>
                             <p
                               className="text-neutralblack font-desktop-body-para-20 
-                                text-[length:var(--desktop-body-para-20-font-size)] 
                                 tracking-[var(--desktop-body-para-20-letter-spacing)] 
                                 leading-[var(--desktop-body-para-20-line-height)]"
                             >

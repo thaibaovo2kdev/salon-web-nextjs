@@ -122,7 +122,7 @@ export default function ServicesSection() {
       {
         title: "Beautique Botanical",
         description:
-          "Submerge your feet in the ULTIMATE Water-massage Experience. Nail trim, ...",
+          "Submerge your feet in the ULTIMATE Water-massage Experience. Nail trim, shape & buff, cuticle groom & callus smoother. Sugar Scrub: A rich blend of conditioners and essential oils with heating sensation. Relax with hot stone massage. Mud masque hot wraps made from botanical extracts and EPOCH® SOLE SOLUTION® – a foot-specific formula works on the underlying cause of rough and cracked heels , silky smooth lotion legs massage.",
         price: "$67",
         rating: 5,
         image: service1.src,
@@ -130,7 +130,7 @@ export default function ServicesSection() {
       {
         title: "Standard Botanical",
         description:
-          "Includes fizzing tablet soak, nail trim, shape & buff, cuticle groom & callus smo...",
+          "Includes fizzing tablet soak, nail trim, shape & buff, cuticle groom & callus smoother. Sugar Scrub: A rich blend of conditioners and essential oil exfoliant. Mud masque hot wraps made from botanical extracts and natural ingredients, silky smooth lotion legs massage.",
         price: "$47",
         rating: 5,
         image: service1.src,
@@ -138,7 +138,7 @@ export default function ServicesSection() {
       {
         title: "Signature Botanical",
         description:
-          "Includes fizzing tablet soak, nail trim, shape & buff, cuticle gVoom & callus sm...",
+          "Includes fizzing tablet soak, nail trim, shape & buff, cuticle gVoom & callus smoother. Sugar Scrub: A rich blend of conditioners and essential oil exfoliant. Relax with hot stone massage. Mud masque hot wraps made from botanical extracts and natural ingredients, silky smooth lotion legs massage",
         price: "$61",
         rating: 5,
         image: service1.src,
@@ -146,7 +146,7 @@ export default function ServicesSection() {
       {
         title: "Royal Botanical",
         description:
-          "All of the same luxurious treatment as the Beautique Pedicure, enhanced with...",
+          "All of the same luxurious treatment as the Beautique Pedicure, enhanced with nourishing COLLAGEN SOCKS for the hands. Say less!",
         price: "$75",
         rating: 5,
         image: service1.src,
@@ -156,7 +156,7 @@ export default function ServicesSection() {
       {
         title: "Basic Pedicure",
         description:
-          "Includes nail trim, shape & buff, cuticle grooming & callus treatment as well as lotion...",
+          "Includes nail nail trim, shape & buff, cuticle groom & callus smoother as well as lotion massage, hot towel wrap and regular polish color of your choice.",
         price: "$35",
         rating: 5,
         image: pedicure1.src,
@@ -164,7 +164,7 @@ export default function ServicesSection() {
       {
         title: "Scrub Exfoliating Pedicure",
         description:
-          "Includes nail trimming/shaping, buffing, cuticle grooming, callus treatment & lotion...",
+          "Includes nail trimming, shaping, buffing, cuticle grooming, callus treatment, citrus scrub massage, hot towel wrap and regular polish of your choice.",
         price: "$42",
         rating: 5,
         image: pedicure2.src,
@@ -172,7 +172,7 @@ export default function ServicesSection() {
       {
         title: "Deluxe Pedicure",
         description:
-          "Includes nail trimming/shaping, buffing, cuticle grooming, callus treatment & lotion...",
+          "Includes nail trimming, shaping, buffing, cuticle grooming, callus treatment, and citrus scrub exfoliation, a hot stone massage with vitamin oil, hot towel wrap and regular polish of your choice.",
         price: "$47",
         rating: 5,
         image: pedicure3.src,
@@ -187,7 +187,7 @@ export default function ServicesSection() {
       {
         title: "Iron Man Pedicure",
         description:
-          "Our Iron Man Pedicure was created especially for the most meticulous ladies...",
+          "Our Iron Man Pedicure was created expressly for men, but ladies are most welcome to the experience. First, soak your feet in Organic Sea Salt to help soften the skin. Trim and buff your nails along with cuticle care, iron out your calluses and relish in a Citrus scrub Exfoliation. Relax with hot stones and vitamin oils. Finally, a hot towel wrap with Marine Maske™ Spearmint Eucalyptus and optional regular polish of your choice.",
         price: "$65",
         rating: 5,
         image: pedicure5.src,
@@ -195,14 +195,22 @@ export default function ServicesSection() {
       {
         title: "Ultimate Pedicure",
         description:
-          "Includes everything in your Organic Pedicure plus a few more luxurious steps to help...",
+          "Includes soaking your feet in Organic Sea Salt to help soften break down dead skin. Nails are trim, shape, and buff along with cuticle care and callus smoother. Exfoliate and hydrate your skin with Honey Pearl Sugar Cane. Relax with a hot stone massage. Finally, rejuvenate your skin with rich Collagen Honey Pearl Cream Mask hot towels wrap and a Paraffin Hot Wax treatment for the feet.",
         price: "$30",
         rating: 5,
         image: pedicure6.src,
       },
       {
         title: "Gel Polish Change/Feet with Gel Color",
-        description: "",
+        description: <div>Add $20 for Upgrade Gel/Shellac <br/>
+        Add $15 for an Extra 10 mins of massage <br/>
+        Add $7 for White French <br/>
+        Add $ 12 for Collagen Cream Mask <br/>
+        Add $10 for Color French <br/>
+        Add $12 for Paraffin Treatment <br/>
+        $3/ea for 3rd color and more <br/>
+        Add $14 for Collagen Socks<br/>
+        </div>,
         price: "$35",
         rating: 5,
         image: pedicure7.src,
@@ -818,7 +826,6 @@ export default function ServicesSection() {
       },
     ],
   };
-  console.log(serviceCards[activeTab as keyof typeof serviceCards]);
   return (
     <section className="flex flex-col items-center gap-20 w-full py-20">
       <div className="flex flex-col w-full max-w-[1117px] items-start gap-20 px-4 md:px-0">
@@ -859,11 +866,11 @@ export default function ServicesSection() {
               </TabsList>
             </Tabs>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
             {serviceCards[activeTab as keyof typeof serviceCards].map(
               (service, index) => (
-                 <Card
-                  key={service.title+index}
+                <Card
+                  key={service.title + index}
                   className="bg-[#f5a3b733] rounded-2xl border-none overflow-hidden"
                 >
                   <CardContent className="p-6 flex flex-col gap-4">
@@ -876,11 +883,11 @@ export default function ServicesSection() {
                         <h3 className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">
                           {service.title}
                         </h3>
-                        <p className="line-clamp-2 font-desktop-body-paragraph-reg text-neutralblack text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] h-12">
+                        {/* <p className="line-clamp-2 font-desktop-body-paragraph-reg text-neutralblack text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] h-12">
                           {service.description}
-                        </p>
+                        </p> */}
                       </div>
-                      <div className="flex items-center justify-between">
+                      {/* <div className="flex items-center justify-between">
                         <span className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">
                           {service.price}
                         </span>
@@ -891,10 +898,27 @@ export default function ServicesSection() {
                             </span>
                           ))}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
+              )
+            )}
+          </div>
+          <div className="flex flex-col gap-4 w-full">
+            {serviceCards[activeTab as keyof typeof serviceCards].map(
+              (service, index) => (
+                <div
+                  key={service.title + index}
+                  className="flex flex-col gap-4"
+                >
+                  <div className="flex flex-row justify-between gap-2">
+                    <h3 className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">{service.title}</h3>
+                    <div className="flex-1 border-b border-dashed mb-2 border-black"></div>
+                    <p className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">{service.price}</p>
+                  </div>
+                  <div className="font-desktop-body-paragraph-reg text-black/70 text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)]">{service.description}</div>
+                </div>
               )
             )}
           </div>
