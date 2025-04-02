@@ -1,25 +1,19 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import HeroSection from "@/views/home-section/components/HeroSection";
-import TestimonialsSection from "@/views/home-section/components/TestimonialSection";
-import { Facebook, Instagram, Mail, MapPin, Phone, X } from "lucide-react";
-import React, { useState } from "react";
-import ice1 from "@/assets/images/ice1.png";
 import contactus1 from "@/assets/images/contact-us-1.png";
 import contactus2 from "@/assets/images/contact-us-2.png";
+import ice1 from "@/assets/images/ice1.png";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import HeroSection from "@/views/home-section/components/HeroSection";
+import TestimonialsSection from "@/views/home-section/components/TestimonialSection";
+import { X } from "lucide-react";
+import { useState } from "react";
 import { FeedbackDialog } from "./components/feedback";
 // Contact Us page component
 export default function ContactUs(): JSX.Element {
@@ -216,8 +210,8 @@ export default function ContactUs(): JSX.Element {
               </Button>
             </DialogHeader>
               <p className="text-center mb-4">
-                We're sorry to hear that your experience wasn't what you hoped
-                for. We'd love to hear from you so we can make things right.
+                {`We're sorry to hear that your experience wasn't what you hoped
+                for. We'd love to hear from you so we can make things right.`}
               </p>
             </DialogContent>
           </Dialog>
@@ -225,14 +219,6 @@ export default function ContactUs(): JSX.Element {
           <TestimonialsSection />
         </div>
       </div>
-    </div>
-  );
-}
-
-function DiscountPopupSection(): JSX.Element {
-  return (
-    <div>
-      <h1>Discount Popup</h1>
     </div>
   );
 }
