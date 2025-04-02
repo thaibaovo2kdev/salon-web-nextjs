@@ -155,19 +155,15 @@ export default function ContactUs(): JSX.Element {
                         </div>
                       </div>
                       <div className="flex items-center gap-6">
-                        <Button className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg"
-                        onClick={() => {
-                          window.open("https://manage2.mangoforsalon.com//booking?id=cv2AZuSvI664AS8LtdEi1A==", "_blank")
-                        }}>
+                        <Button className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg">
+                          <a className="w-full h-full" href="https://manage2.mangoforsalon.com//booking?id=cv2AZuSvI664AS8LtdEi1A==" target="_blank">
                           Appointment
+                          </a>
                         </Button>
-                        <Button
-                        onClick={
-                          () => {
-                            window.open("https://beautiquenailspa.com/feedback", "_blank")
-                          }
-                        } className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg">
+                        <Button className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg">
+                          <a className="w-full h-full" href="https://beautiquenailspa.com/feedback" target="_blank">
                           Write review
+                          </a>
                         </Button>
                       </div>
                     </CardContent>
