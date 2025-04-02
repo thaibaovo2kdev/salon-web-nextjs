@@ -9,9 +9,9 @@ import DiscountPopupSection from '@/views/home-section/components/DiscountPopup'
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Top Card Solutions',
+  title: 'Beautique Nails & Spa',
   description:
-    'Effortlessly Create and Send Gift Cards with Top Card Solutions',
+    'Beautique Nails & Spa',
 };
 
 export default function RootLayout({
