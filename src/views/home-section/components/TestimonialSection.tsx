@@ -2,6 +2,7 @@ import logo from "@/assets/images/logo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import Map from "@/components/ui/map";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 import {
   Facebook,
   Instagram,
@@ -54,10 +55,13 @@ export default function TestimonialsSection(): JSX.Element {
               {/* Logo and contact info */}
               <div className="flex items-center md:items-start flex-col gap-4">
                 <div className="w-[200px] h-[97px] relative mb-4">
-                  <img
-                    className="w-[200px] object-cover"
+                  <Image
+                    className="object-cover"
                     alt="Logo"
-                    src={logo.src}
+                    src={logo}
+                    width={200}
+                    height={97}
+                    loading="lazy"
                   />
                 </div>
 

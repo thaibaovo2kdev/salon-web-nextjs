@@ -6,7 +6,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import DiscountPopupSection from '@/views/home-section/components/DiscountPopup';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: 'Beautique Nails & Spa',

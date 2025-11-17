@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PlayCircle } from "lucide-react";
 import React from "react";
 import ice1 from "@/assets/images/ice1.png";
+import Image from "next/image";
 import service1 from "@/assets/images/service-bg.png";
 import homebg2 from "@/assets/images/home-bg-2.png";
 import homebg3 from "@/assets/images/home-bg-3.png";
@@ -100,7 +101,7 @@ export default function ServicesSection(): JSX.Element {
     <section className="flex flex-col w-full items-center gap-20">
       {/* Header Section */}
       <div className="flex flex-col w-full max-w-[1116px] items-center gap-6 mt-[40px] md:mt-[80px]">
-        <img className="w-[73px] h-[73px]" alt="Ice crystals" src={ice1.src} />
+        <Image className="object-contain" alt="Ice crystals" src={ice1} width={73} height={73} loading="lazy" />
 
         <div className="flex flex-col items-center gap-2 w-full">
           <h3 className="w-full px-6 md:px-0 font-desktop-header-h3 font-[number:var(--desktop-header-h3-font-weight)] text-red text-[length:var(--desktop-header-h3-font-size)] text-center tracking-[var(--desktop-header-h3-letter-spacing)] leading-[var(--desktop-header-h3-line-height)] [font-style:var(--desktop-header-h3-font-style)]">

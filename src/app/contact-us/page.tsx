@@ -2,6 +2,7 @@
 import contactus1 from "@/assets/images/contact-us-1.png";
 import contactus2 from "@/assets/images/contact-us-2.png";
 import ice1 from "@/assets/images/ice1.png";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -34,7 +35,7 @@ export default function ContactUs(): JSX.Element {
   const locations = [
     {
       name: "BEAUTIQUE 1 - MULBERRY SQUARE",
-      image: contactus1.src,
+      image: contactus1,
       address: "1083 State Route 28, Ste B Milford, OH 45150",
       addressNote: "Same plaza as Kroger and Platnet Fitness",
       phone: "(513) 268 - 7777",
@@ -44,7 +45,7 @@ export default function ContactUs(): JSX.Element {
     },
     {
       name: "BEAUTIQUE 2 - OLD MILFORD",
-      image: contactus2.src,
+      image: contactus2,
       address: "796 Main St, Ste B Milford, OH 45150",
       addressNote: "Same plaza as Kroger (Old Milford)",
       phone: "(513) 987 - 9999",
@@ -73,10 +74,13 @@ export default function ContactUs(): JSX.Element {
           <section className="container mx-auto px-4 py-10 md:py-20">
             <div className="flex flex-col items-center gap-20">
               <div className="flex flex-col items-center gap-6 max-w-[1117px] mx-auto">
-                <img
-                  className="w-[73px] h-[73px]"
+                <Image
+                  className="object-contain"
                   alt="Ice crystals"
-                  src={ice1.src}
+                  src={ice1}
+                  width={73}
+                  height={73}
+                  loading="lazy"
                 />
                 <div className="flex flex-col items-center gap-2 text-center">
                   <h2 className="font-desktop-header-h2 text-red text-[40px] md:text-[60px] leading-[150%]">
@@ -99,10 +103,13 @@ export default function ContactUs(): JSX.Element {
                         {location.name}
                       </h2>
                       <div className="flex flex-col items-center gap-4 w-full">
-                        <img
-                          className="w-[356px] h-[312px] object-cover"
+                        <Image
+                          className="object-cover"
                           alt={location.name}
                           src={location.image}
+                          width={356}
+                          height={312}
+                          loading="lazy"
                         />
                         <div className="flex flex-col items-center gap-4 w-full">
                           <div className="flex flex-col w-full pl-2 md:pl-20">

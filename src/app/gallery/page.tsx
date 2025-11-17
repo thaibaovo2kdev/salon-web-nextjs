@@ -5,6 +5,7 @@ import TestimonialsSection from "@/views/home-section/components/TestimonialSect
 import { Facebook, Instagram } from "lucide-react";
 import ice1 from "@/assets/images/ice1.png";
 import gallery1 from "@/assets/images/gallery/gallery-1.png";
+import Image from "next/image";
 export default function Gallery(): JSX.Element {
   const navItems = [
     { label: "HOME", href: "#", active: false },
@@ -68,10 +69,13 @@ export default function Gallery(): JSX.Element {
         <main className="container mx-auto px-4 flex flex-col items-center">
           <section className="flex flex-col items-center gap-20 py-20 w-full max-w-[1117px]">
             <div className="flex flex-col items-center gap-6 max-w-[1117px] mx-auto">
-              <img
-                className="w-[73px] h-[73px]"
+              <Image
+                className="object-contain"
                 alt="Ice crystals"
-                src={ice1.src}
+                src={ice1}
+                width={73}
+                height={73}
+                loading="lazy"
               />
               <div className="flex flex-col items-center gap-2 text-center">
                 <h2 className="font-desktop-header-h2 text-red text-[40px] md:text-[60px] leading-[150%]">
@@ -85,7 +89,14 @@ export default function Gallery(): JSX.Element {
               {galleryImages.map((image, index) => (
                 <Card key={index} className="border-0 rounded-none overflow-hidden p-0">
                   <CardContent className="p-0">
-                    <img className="w-full h-[261px] object-cover" alt={image.alt} src={image.src} />
+                    <Image 
+                      className="w-full object-cover" 
+                      alt={image.alt} 
+                      src={gallery1} 
+                      width={261}
+                      height={261}
+                      loading="lazy"
+                    />
                   </CardContent>
                 </Card>
               ))}

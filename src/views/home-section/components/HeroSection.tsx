@@ -3,6 +3,7 @@ import bg3 from "@/assets/images/bg-header-3.png";
 import bg from "@/assets/images/bg1.png";
 import logo from "@/assets/images/logo.png";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -54,32 +55,38 @@ export default function HeroSection(): JSX.Element {
           key={index}
           className="absolute inset-0 h-full w-full transition-opacity duration-1000"
           style={{
-            backgroundImage: `url(${background.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
             opacity: currentBgIndex === index ? 1 : 0,
           }}
         >
+          <Image
+            src={background}
+            alt={`Background ${index + 1}`}
+            fill
+            priority={index === 0}
+            className="object-cover"
+            sizes="100vw"
+            quality={85}
+          />
           {/* Background image with overlay */}
           <div className="absolute inset-0 bg-[url(/rectangle-3.png)] bg-cover bg-center">
             <div className="h-full w-full bg-gradient-to-b from-black/87 via-black/14 to-black/76" />
           </div>
         </div>
       ))}
-      <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
+      {/* <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
         <a href="tel:+15132687777" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
         <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a>
 
-      </div>
+      </div> */}
 
       {/* Header content */}
       <div className={`fixed top-0 left-0 right-0 z-[99] flex md:hidden pt-6 px-6 justify-between w-full ${onScroll ? "bg-black/50 pb-8 transition-all duration-300 ease-in-out" : "bg-transparent transition-all duration-300 ease-out"}`}>
-        <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
+        <Image className="object-cover" alt="Logo" src={logo} width={90} height={44} priority />
         <MobileNavigation />
       </div>
       <div className={`fixed z-[99] top-0 left-0 right-0 hidden md:flex items-center justify-between md:px-[40px] lg:px-[162px] pt-6 ${onScroll ? "bg-black/50 pb-8 transition-all duration-300 ease-in-out" : "bg-transparent transition-all duration-300 ease-out"}`}>
         {/* Logo */}
-        <img className="w-[90px] h-11 object-cover" alt="Logo" src={logo.src} />
+        <Image className="object-cover" alt="Logo" src={logo} width={90} height={44} priority />
 
         {/* Navigation */}
         <NavigationMenu className="mx-auto">
@@ -133,7 +140,8 @@ export default function HeroSection(): JSX.Element {
         {/* Book Now Button */}
         <Button
           onClick={() => {
-            window !== undefined && window.open("https://lk.macmarketing.us/beautiquebooking", "_blank")
+            // window !== undefined && window.open("https://lk.macmarketing.us/beautiquebooking", "_blank")
+            router.push("/contact-us")
           }}
           className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]"
         >

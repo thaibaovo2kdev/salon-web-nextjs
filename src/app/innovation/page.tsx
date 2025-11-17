@@ -3,6 +3,7 @@ import ice1 from "@/assets/images/ice1.png";
 import { Card, CardContent } from "@/components/ui/card";
 import HeroSection from "@/views/home-section/components/HeroSection";
 import TestimonialsSection from "@/views/home-section/components/TestimonialSection";
+import Image from "next/image";
 import homee from "@/assets/images/home-e.png";
 import homeTru from "@/assets/images/home-tru.png";
 import homeDual from "@/assets/images/home-dual.png";
@@ -24,8 +25,8 @@ export default function Innovation() {
   const features = [
     {
       id: 1,
-      image: innovation1.src,
-      icon: homeDual.src,
+      image: innovation1,
+      icon: homeDual,
       title: "DUAL-JET™",
       subtitle: "HYDRO-MASSAGE SYSTEM",
       description:
@@ -33,8 +34,8 @@ export default function Innovation() {
     },
     {
       id: 2,
-      image: innovation2.src,
-      icon: homeTru.src,
+      image: innovation2,
+      icon: homeTru,
       title: "TRU-TOUCH™",
       subtitle: "SHIATSU MASSAGE MECHANISM",
       description:
@@ -42,8 +43,8 @@ export default function Innovation() {
     },
     {
       id: 3,
-      image: innovation3.src,
-      icon: home4.src,
+      image: innovation3,
+      icon: home4,
       title: "4-WAY POWER CUSHION",
       subtitle: "WITH DUAL-CONTROL",
       description:
@@ -51,8 +52,8 @@ export default function Innovation() {
     },
     {
       id: 4,
-      image: innovation4.src,
-      icon: homee.src,
+      image: innovation4,
+      icon: homee,
       title: "ECO-AIR™",
       subtitle: "VENTILATION-READY",
       description:
@@ -73,10 +74,13 @@ export default function Innovation() {
           <HeroSection />
           <section className="container mx-auto px-4 py-20">
             <div className="flex flex-col items-center gap-6 max-w-[1117px] mx-auto px-6 md:px-0">
-              <img
-                className="w-[73px] h-[73px]"
+              <Image
+                className="object-contain"
                 alt="Ice crystals"
-                src={ice1.src}
+                src={ice1}
+                width={73}
+                height={73}
+                loading="lazy"
               />
               <div className="flex flex-col items-center gap-2 text-center">
                 <h2 className="font-desktop-header-h2 text-red text-[40px] md:text-[60px] leading-[150%]">
@@ -97,17 +101,23 @@ export default function Innovation() {
                   key={feature.id}
                   className="flex flex-col md:flex-row items-center gap-6 w-full border-none shadow-none"
                 >
-                  <img
-                    className="w-full md:w-[451px] h-[300px] object-cover"
+                  <Image
+                    className="object-cover"
                     alt={feature.title}
                     src={feature.image}
+                    width={451}
+                    height={300}
+                    loading="lazy"
                   />
                   <CardContent className="flex flex-col w-full md:w-[642px] items-start gap-6 p-0">
                     <div className="flex items-center gap-6">
-                      <img
-                        className="w-[120px] h-[120px] object-cover"
+                      <Image
+                        className="object-cover"
                         alt={feature.title}
                         src={feature.icon}
+                        width={120}
+                        height={120}
+                        loading="lazy"
                       />
                       <div className="flex flex-col w-[248px] items-start gap-1">
                         <h3 className="font-desktop-body-para-20-med text-black text-[20px] leading-[150%]">

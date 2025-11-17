@@ -9,6 +9,7 @@ import {
 import { Snowflake } from "lucide-react";
 import React from "react";
 import ice1 from "@/assets/images/ice1.png";
+import Image from "next/image";
 
 // Define the component that renders the Policies section
 export default function PoliciesSection(): JSX.Element {
@@ -80,10 +81,13 @@ export default function PoliciesSection(): JSX.Element {
       {/* Policies content section */}
       <div className="flex flex-col w-full max-w-[1117px] items-start gap-20">
         <div className="flex flex-col items-center gap-6 max-w-[1117px] mx-auto">
-              <img
-                className="w-[73px] h-[73px]"
+              <Image
+                className="object-contain"
                 alt="Ice crystals"
-                src={ice1.src}
+                src={ice1}
+                width={73}
+                height={73}
+                loading="lazy"
               />
               <div className="flex flex-col items-center gap-2 text-center">
                 <h2 className="font-desktop-header-h2 text-red text-[40px] md:text-[60px] leading-[150%]">

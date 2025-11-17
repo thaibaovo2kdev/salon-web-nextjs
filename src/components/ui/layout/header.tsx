@@ -20,6 +20,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 interface IHeaderProps {}
 
 function MenuIcon(props: any) {
@@ -74,30 +75,36 @@ const navItems = [
 ];
 
 const Header: React.FunctionComponent<IHeaderProps> = (props) => {
+  const router = useRouter();
   return (
     <header className="relative w-full h-[300px] md:h-[800px]">
-      <div
-        className="h-full w-full relative"
-        style={{
-          backgroundImage: `url(${bg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="h-full w-full relative">
+        <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          quality={85}
+        />
         {/* Background image with overlay */}
         {/* <div className="absolute inset-0 bg-[url(/rectangle-3.png)] bg-cover bg-center">
           <div className="h-full w-full bg-gradient-to-b from-black/87 via-black/14 to-black/76" />
         </div> */}
         <div className="flex md:hidden py-4 px-8">
-          <img
-            className="w-[90px] h-11 object-cover"
+          <Image
+            className="object-cover"
             alt="Logo"
-            src={logo.src}
+            src={logo}
+            width={90}
+            height={44}
+            priority
           />
           <Drawer >
             <DrawerTrigger>
               <Button variant="outline" className="bg-transparent">
-                <Image src={menuIcon} alt="Menu" className="w-10"/>
+                <Image src={menuIcon} alt="Menu" width={40} height={40} priority/>
               </Button>
             </DrawerTrigger>
             <DrawerContent>
@@ -120,10 +127,13 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
         {/* Header content */}
         <div className="relative hidden md:flex items-center justify-between px-8 md:px-[162px] pt-6">
           {/* Logo */}
-          <img
-            className="w-[90px] h-11 object-cover"
+          <Image
+            className="object-cover"
             alt="Logo"
-            src={logo.src}
+            src={logo}
+            width={90}
+            height={44}
+            priority
           />
 
           {/* Navigation */}
@@ -145,7 +155,8 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
 
           {/* Book Now Button */}
           <Button onClick={()=> {
-            window !== undefined && window.open("https://lk.macmarketing.us/beautiquebooking", "_blank")
+            // window !== undefined && window.open("https://lk.macmarketing.us/beautiquebooking", "_blank")
+            router.push("/contact-us")
           }} className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]">
             BOOK NOW
           </Button>

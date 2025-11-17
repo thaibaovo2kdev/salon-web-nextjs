@@ -3,6 +3,7 @@ import { X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import Image from "next/image"
 
 interface FeedbackDialogProps {
   isOpen: boolean
@@ -52,10 +53,13 @@ export function FeedbackDialog({ isOpen, setIsOpen, store, setIsUnhappy }: Feedb
             onClick={handleHappyClick}
           >
             <div className="relative mb-2 overflow-hidden rounded-full p-2 transition-all duration-300 group-hover:scale-110">
-              <img
+              <Image
                 src="https://beautiquenailspa.com/wp-content/uploads/elementor/thumbs/happy-1-qd6m4a8etz7okd0n43avrss865ovrkg4vf2qj06208.png"
                 alt="Happy face"
-                className="h-20 w-20 object-contain"
+                width={80}
+                height={80}
+                className="object-contain"
+                loading="lazy"
               />
             </div>
             <span className="font-semibold text-lg group-hover:text-primary transition-colors">Happy</span>
@@ -66,10 +70,13 @@ export function FeedbackDialog({ isOpen, setIsOpen, store, setIsUnhappy }: Feedb
             onClick={handleUnhappyClick}
           >
             <div className="relative mb-2 overflow-hidden rounded-full p-2 transition-all duration-300 group-hover:scale-110">
-              <img
+              <Image
                 src="https://beautiquenailspa.com/wp-content/uploads/elementor/thumbs/sad-4-qd6m4b690t8yvyz9ylpicajorjk8z9jv7jq80a4nu0.png"
                 alt="Unhappy face"
-                className="h-20 w-20 object-contain"
+                width={80}
+                height={80}
+                className="object-contain"
+                loading="lazy"
               />
             </div>
             <span className="font-semibold text-lg group-hover:text-primary transition-colors">Unhappy</span>

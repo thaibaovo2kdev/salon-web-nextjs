@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import React, { useState } from "react";
 import logo from "@/assets/images/logo.png";
 import { useGiftCardStore } from "@/store/giftcard-store";
+import Image from "next/image";
 export default function DiscountPopupSection(): JSX.Element {
     const { isOpenDiscountPopup, setIsOpenDiscountPopup } = useGiftCardStore();
     const hasSeenPopup = typeof window !== "undefined" && localStorage.getItem('hasSeenDiscountPopup') === 'true';
@@ -36,10 +37,13 @@ export default function DiscountPopupSection(): JSX.Element {
           <div className="relative w-full flex justify-center py-16 px-8">
             <div className="flex flex-col w-full max-w-[417px] items-center gap-8">
               <div className="flex flex-col w-[221px] items-center gap-4">
-                <img
-                  className="w-[200px] h-[97px] object-cover"
+                <Image
+                  className="object-cover"
                   alt="Beautique nails & spa logo"
-                  src={discountData.logo}
+                  src={logo}
+                  width={200}
+                  height={97}
+                  priority
                 />
                 <p
                   className="text-center font-desktop-body-paragraph-reg font-[number:var(--desktop-body-paragraph-reg-font-weight)] 

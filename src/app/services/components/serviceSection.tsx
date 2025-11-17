@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import ice1 from "@/assets/images/ice1.png";
+import Image from "next/image";
 import {
   acrylic1,
   acrylic10,
@@ -830,10 +831,13 @@ export default function ServicesSection() {
     <section className="flex flex-col items-center gap-20 w-full py-20">
       <div className="flex flex-col w-full max-w-[1117px] items-start gap-20 px-4 md:px-0">
         <div className="flex flex-col items-center gap-6 max-w-[1117px] mx-auto">
-          <img
-            className="w-[73px] h-[73px]"
+          <Image
+            className="object-contain"
             alt="Ice crystals"
-            src={ice1.src}
+            src={ice1}
+            width={73}
+            height={73}
+            loading="lazy"
           />
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="font-desktop-header-h2 text-red text-[40px] md:text-[60px] leading-[150%]">
@@ -866,7 +870,7 @@ export default function ServicesSection() {
               </TabsList>
             </Tabs>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
+          {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
             {serviceCards[activeTab as keyof typeof serviceCards].map(
               (service, index) => (
                 <Card
@@ -883,28 +887,13 @@ export default function ServicesSection() {
                         <h3 className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">
                           {service.title}
                         </h3>
-                        {/* <p className="line-clamp-2 font-desktop-body-paragraph-reg text-neutralblack text-[length:var(--desktop-body-paragraph-reg-font-size)] tracking-[var(--desktop-body-paragraph-reg-letter-spacing)] leading-[var(--desktop-body-paragraph-reg-line-height)] h-12">
-                          {service.description}
-                        </p> */}
                       </div>
-                      {/* <div className="flex items-center justify-between">
-                        <span className="font-desktop-body-para-20-med text-red text-[length:var(--desktop-body-para-20-med-font-size)] tracking-[var(--desktop-body-para-20-med-letter-spacing)] leading-[var(--desktop-body-para-20-med-line-height)]">
-                          {service.price}
-                        </span>
-                        <div className="flex">
-                          {[...Array(service.rating)].map((_, i) => (
-                            <span key={i} className="text-pink">
-                              ★
-                            </span>
-                          ))}
-                        </div>
-                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
               )
             )}
-          </div>
+          </div> */}
           <div className="flex flex-col gap-4 w-full">
             {serviceCards[activeTab as keyof typeof serviceCards].map(
               (service, index) => (
