@@ -109,13 +109,13 @@ export default function ServicesSection() {
     { name: "Botanical Pedicure", active: true, id: "botanical-pedicure" },
     { name: "Pedicure", active: false, id: "pedicure" },
     { name: "Manicure", active: false, id: "manicure" },
+    { name: "Hard Gel (builder-gel)", active: false, id: "build-gel" },
     { name: "Dipping Powder (SNS)", active: false, id: "dipping-powder-sns" },
     { name: "Acrylic Nails", active: false, id: "acrylic-nails" },
     { name: "Pink & White", active: false, id: "pink-white" },
     { name: "Kid Services", active: false, id: "kid-services" },
     { name: "MISC Services", active: false, id: "misc-services" },
     { name: "Waxing", active: false, id: "waxing" },
-    { name: "Build Gel", active: false, id: "build-gel" },
   ];
 
   const serviceCards = {
@@ -227,6 +227,14 @@ export default function ServicesSection() {
         image: pedicure1.src,
       },
       {
+        title: "Biab Gel Manicure",
+        description:
+          "BIAB Gel creates a layer of protection that allows nails to grow steadily by lessening the chances of breakage. It helps to reinforce the strength and durability of your natural nails. BIAB gel manicures are highly recommended for clients with weak, brittle nails or any client who struggles to grow their nails.",
+        price: "$50",
+        rating: 5,
+        image: buildGel6.src,
+      },
+      {
         title: "Beautique Manicure",
         description:
           "First, soak your hands in Honey Sea Salt + Herbal Plant Complex Oil to help soften the cuticle and break down dead skin cells. Nails are trim, shape, and buff along with cuticle care. Exfoliate and hydrate your skin with Honey Pearl Sugar Cane and silky smooth lotion. Finished with a rich Collagen Honey Pearl Cream Mask hot towels wrap that helps give your skin a complexion boost.",
@@ -264,6 +272,13 @@ export default function ServicesSection() {
         price: "$30",
         rating: 5,
         image: pedicure6.src,
+      },
+      {
+        title: "Biab Gel Polish Change",
+        description: "",
+        price: "$40",
+        rating: 5,
+        image: buildGel6.src,
       },
     ],
     "dipping-powder-sns": [
@@ -310,7 +325,7 @@ export default function ServicesSection() {
       {
         title: "Full Set (Regular Polish)",
         description: "",
-        price: "$43",
+        price: "$45",
         rating: 5,
         image: acrylic1.src,
       },
@@ -324,21 +339,21 @@ export default function ServicesSection() {
       {
         title: "White Tips (Full Set)",
         description: "",
-        price: "$53",
+        price: "$55",
         rating: 5,
         image: acrylic3.src,
       },
       {
         title: "Gel Full Set",
         description: "",
-        price: "$57",
+        price: "$58",
         rating: 5,
         image: acrylic4.src,
       },
       {
         title: "Gel Fill-ins",
         description: "",
-        price: "$47",
+        price: "$48",
         rating: 5,
         image: acrylic5.src,
       },
@@ -366,7 +381,7 @@ export default function ServicesSection() {
       {
         title: "Ombré 1 Color Fill-ins",
         description: "Fill-in the only color nearest to the cuticle of nails.",
-        price: "$42+",
+        price: "$45",
         rating: 5,
         image: acrylic9.src,
       },
@@ -394,21 +409,21 @@ export default function ServicesSection() {
       {
         title: "Gel Color Change On Acrylic",
         description: "",
-        price: "$32",
+        price: "$35",
         rating: 5,
         image: acrylic13.src,
       },
       {
-        title: "New Set Acrylic On One Toe",
+        title: "New Set Acrylic On One Toe (New set/Fill-in)",
         description: "",
-        price: "$10",
+        price: "$10/$8",
         rating: 5,
         image: acrylic14.src,
       },
       {
-        title: "New Set Acrylic On Two Toes",
+        title: "New Set Acrylic On Two Toes (New set/Fill-in)",
         description: "",
-        price: "$15",
+        price: "$15/$13",
         rating: 5,
         image: acrylic15.src,
       },
@@ -796,7 +811,7 @@ export default function ServicesSection() {
         image: buildGel2.src,
       },
       {
-        title: "Hard Gel Backfill",
+        title: "Hard Gel fill",
         description: "",
         price: "$55",
         rating: 5,
@@ -806,24 +821,9 @@ export default function ServicesSection() {
         title: "Soft Gel Tip (Gel-x)",
         description:
           "Soft gel tip is a full-coverage soft gel extension service. Since tip extensions are pre-formed to your preferred length and shape, the application process is quick and easy. A Soft gel tips service gives you the best of both worlds in that the extensions are strong and long-lasting.",
-        price: "$57",
+        price: "$60",
         rating: 5,
         image: buildGel4.src,
-      },
-      {
-        title: "Soft Gel Tip (Gel-x) Backfill",
-        description: "Only applicable if your new set was done in our store.",
-        price: "$50",
-        rating: 5,
-        image: buildGel5.src,
-      },
-      {
-        title: "Biab Gel Manicure",
-        description:
-          "BIAB Gel creates a layer of protection that allows nails to grow steadily by lessening the chances of breakage. It helps to reinforce the strength and durability of your natural nails. BIAB gel manicures are highly recommended for clients with weak, brittle nails or any client who struggles to grow their nails.",
-        price: "$50",
-        rating: 5,
-        image: buildGel6.src,
       },
     ],
   };

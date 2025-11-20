@@ -1,30 +1,39 @@
 import logo from "@/assets/images/logo.png";
 import { Card, CardContent } from "@/components/ui/card";
-import Map from "@/components/ui/map";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import {
-  Facebook,
-  Instagram,
-  MailIcon,
-  MapPinIcon,
-  PhoneIcon,
-  Twitter,
-} from "lucide-react";
+import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
+import contactus1 from "@/assets/images/contact-us-1.png";
+import contactus2 from "@/assets/images/contact-us-2.png";
 
 export default function TestimonialsSection(): JSX.Element {
   // Business hours data
   const businessHours = [
-    { day: "Mon - Fri", hours: "9:00 AM - 8:00 PM" },
-    { day: "Saturday", hours: "9:00 AM - 7:00 PM" },
-    { day: "Sunday", hours: "11:00 AM - 6:00 PM" },
+    "Mon - Fri: 9:00 AM - 8:00 PM",
+    "Saturday: 9:00 AM - 7:00 PM",
+    "Sunday: 11:00 AM - 6:00 PM",
   ];
 
-  // Social media links
-  const socialLinks = [
-    { icon: <Facebook className="h-6 w-6" />, url: "https://www.facebook.com/beautiquenailspa45150/" },
-    { icon: <Instagram className="h-6 w-6" />, url: "https://www.instagram.com/beautiquenailspa45150/" },
-    { icon: <Twitter className="h-6 w-6" />, url: "https://twitter.com/beautique45150" },
+  // Location data for salon branches
+  const locations = [
+    {
+      name: "BEAUTIQUE 1 (MULBERRY SQUARE)",
+      image: contactus1,
+      address: "1083 State Route 28, Ste B Milford, OH 45150",
+      phone: "(513) 268 - 7777",
+      email: "info@beautiquenailspa.com",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.2350817367665!2d-84.2351963!3d39.1921068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x729fed0cef1ee513!2sBeautique%20Nails%20%26%20Spa!5e0!3m2!1svi!2s!4v1658724110840!5m2!1svi!2s",
+    },
+    {
+      name: "BEAUTIQUE 2 (OLD MILFORD)",
+      image: contactus2,
+      address: "796 Main St, Ste B Milford, OH 45150",
+      phone: "(513)987-9999",
+      email: "oldmilford@beautiquenailspa.com",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.2350817367665!2d-84.2836977!3d39.1773219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841abfc00273149%3A0x6415e5ee5a20cb64!2sBeautique%20Nail%20Spa%202%20(Old%20Milford)!5e0!3m2!1svi!2s!4v1658724110840!5m2!1svi!2s",
+    },
   ];
 
   return (
@@ -51,7 +60,7 @@ export default function TestimonialsSection(): JSX.Element {
         {/* Footer dark section */}
         <div className="bg-[#151515] pt-16 pb-6">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap gap-10 lg:gap-[175px] mb-12 items-center justify-center md:justify-between">
+            <div className="flex flex-wrap gap-10 lg:gap-8 mb-12 items-start justify-center md:justify-between">
               {/* Logo and contact info */}
               <div className="flex items-center md:items-start flex-col gap-4">
                 <div className="w-[200px] h-[97px] relative mb-4">
@@ -65,78 +74,64 @@ export default function TestimonialsSection(): JSX.Element {
                   />
                 </div>
 
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-2">
-                    <MapPinIcon className="w-6 h-6 text-white" />
-                    <span className="text-white">
-                      1083 State Route 28, Ste B Milford, OH 45150
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <PhoneIcon className="w-6 h-6 text-white" />
-                    <span className="text-white">(513) 268 - 7777</span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <MailIcon className="w-6 h-6 text-white" />
-                    <span className="text-white">
-                      info@beautiquenailspa.com
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Business hours */}
-              <div className="flex flex-col items-center gap-6">
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center md:items-start gap-4">
                   <h3 className="text-white text-xl font-medium">
                     Business Hours
                   </h3>
                   <div className="flex flex-col gap-4">
                     {businessHours.map((item, index) => (
                       <div key={index} className="text-white">
-                        {item.day}: {item.hours}
+                        {item}
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Social links */}
-                <div className="flex flex-col items-center gap-4">
-                  <h3 className="text-white text-xl font-medium">Social</h3>
-                  <div className="flex gap-4">
-                    {socialLinks.map((link, index) => (
-                      <a
-                        key={index}
-                        href={link.url}
-                        className="text-white hover:text-pink transition-colors"
-                      >
-                        {link.icon}
-                      </a>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Map section */}
-              <div className="flex flex-col items-center gap-4">
-                <h3 className="text-white text-xl font-medium">
-                  Get Direction
-                </h3>
-                <Card className="w-[250px] h-44 overflow-hidden">
-                  <CardContent className="p-0">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.2350817367665!2d-84.2351963!3d39.1921068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x729fed0cef1ee513!2sBeautique%20Nails%20%26%20Spa!5e0!3m2!1svi!2s!4v1658724110840!5m2!1svi!2s"
-                      width="600"
-                      height="250"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                  </CardContent>
-                </Card>
+              {/* Business hours */}
+
+              {/* Locations with maps */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-4">
+                {locations.map((location, index) => (
+                  <div key={index} className="flex flex-col gap-4">
+                    <h3 className="text-white text-xl font-medium">
+                      {location.name}
+                    </h3>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-start gap-2">
+                        <MapPinIcon className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+                        <span className="text-white text-sm">
+                          {location.address}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <PhoneIcon className="w-5 h-5 text-white flex-shrink-0" />
+                        <span className="text-white text-sm">
+                          {location.phone}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MailIcon className="w-5 h-5 text-white flex-shrink-0" />
+                        <span className="text-white text-sm">
+                          {location.email}
+                        </span>
+                      </div>
+                    </div>
+                    <Card className="w-full max-w-[250px] h-44 overflow-hidden">
+                      <CardContent className="p-0">
+                        <iframe
+                          src={location.mapUrl}
+                          width="100%"
+                          height="176"
+                          style={{ border: 0 }}
+                          allowFullScreen={true}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
               </div>
             </div>
 
