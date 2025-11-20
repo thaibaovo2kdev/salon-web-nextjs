@@ -73,11 +73,11 @@ export default function HeroSection(): JSX.Element {
           </div>
         </div>
       ))}
-      {/* <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
-        <a href="tel:+15132687777" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
-        <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a>
+      <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
+        <a href="/contact-us" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
+        {/* <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a> */}
 
-      </div> */}
+      </div>
 
       {/* Header content */}
       <div className={`fixed top-0 left-0 right-0 z-[99] flex md:hidden pt-6 px-6 justify-between w-full ${onScroll ? "bg-black/50 pb-8 transition-all duration-300 ease-in-out" : "bg-transparent transition-all duration-300 ease-out"}`}>

@@ -165,7 +165,7 @@ export default function ServicesSection(): JSX.Element {
           Salon Tour
         </h2> */}
         <div className="w-full mx-0 md:mx-0 max-w-screen md:h-[628px] bg-neutral-2 flex items-center justify-center rounded-2xl">
-          <video src={video} autoPlay muted loop className="w-full max-w-screen h-full object-cover" />
+          <video src={video} muted controls className="w-full max-w-screen h-full object-cover" />
         </div>
       </div>
             {/* Statistics Section */}
