@@ -1,10 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
 import ice1 from "@/assets/images/ice1.png";
-import Image from "next/image";
 import {
   acrylic1,
   acrylic10,
@@ -29,8 +25,7 @@ import {
   buildGel2,
   buildGel3,
   buildGel4,
-  buildGel5,
-  buildGel6,
+  buildGel6
 } from "@/assets/images/services/build-gel";
 import {
   dipping1,
@@ -101,17 +96,20 @@ import {
   wax8,
   wax9,
 } from "@/assets/images/services/wax";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function ServicesSection() {
-  const [activeTab, setActiveTab] = useState("acrylic-nails");
+  const [activeTab, setActiveTab] = useState("botanical-pedicure");
 
   const serviceTabs = [
     { name: "Botanical Pedicure", active: true, id: "botanical-pedicure" },
     { name: "Pedicure", active: false, id: "pedicure" },
-    { name: "Manicure", active: false, id: "manicure" },
-    { name: "Hard Gel (builder-gel)", active: false, id: "build-gel" },
-    { name: "Dipping Powder (SNS)", active: false, id: "dipping-powder-sns" },
+    { name: "Hard Gel (Builder Gel)", active: false, id: "build-gel" },
+    { name: "Dip Powder (SNS)", active: false, id: "dipping-powder-sns" },
     { name: "Acrylic Nails", active: false, id: "acrylic-nails" },
+    { name: "Manicure", active: false, id: "manicure" },
     { name: "Pink & White", active: false, id: "pink-white" },
     { name: "Kid Services", active: false, id: "kid-services" },
     { name: "MISC Services", active: false, id: "misc-services" },
@@ -222,7 +220,7 @@ export default function ServicesSection() {
         title: "Gel/Shellac Manicure",
         description:
           "Our Basic manicure includes nail trimming, shaping, cuticle grooming, lotion massage, hot towels and GEL polish color of your choice.",
-        price: "$42",
+        price: "$44",
         rating: 5,
         image: pedicure1.src,
       },
@@ -246,7 +244,7 @@ export default function ServicesSection() {
         title: "Basic Manicure",
         description:
           "Our Basic manicure includes nail trimming, shaping, cuticle grooming, lotion massage, hot towels and regular polish color of your choice.",
-        price: "$22",
+        price: "$24",
         rating: 5,
         image: pedicure3.src,
       },
@@ -254,7 +252,7 @@ export default function ServicesSection() {
         title: "Deluxe Manicure",
         description:
           "Our Deluxe manicure includes nail trimming, shaping, cuticle grooming, exfoliate and hydrate your skin with Honey Pearl Sugar Cane, lotion massage and hot towels wrap and regular polish color of your choice.",
-        price: "$28",
+        price: "$29",
         rating: 5,
         image: pedicure4.src,
       },
@@ -269,7 +267,7 @@ export default function ServicesSection() {
       {
         title: "Gel Polish Change | Hands",
         description: "Manicure add-ons",
-        price: "$30",
+        price: "$33",
         rating: 5,
         image: pedicure6.src,
       },
@@ -332,7 +330,7 @@ export default function ServicesSection() {
       {
         title: "Fill-ins (Regular Polish)",
         description: "",
-        price: "$35",
+        price: "$38",
         rating: 5,
         image: acrylic2.src,
       },
@@ -851,16 +849,18 @@ export default function ServicesSection() {
         </div>
         <div className="flex flex-col items-start gap-8 w-full">
           <div className="w-full max-w-screen">
-            <Tabs defaultValue="Botanical Pedicure" className="w-full">
-              <TabsList className="flex flex-row justify-start w-full h-auto bg-transparent gap-2 max-w-screen overflow-x-auto">
-                {serviceTabs.map((tab) => (
+            <Tabs defaultValue="botanical-pedicure" className="w-full">
+              <TabsList className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 w-full h-auto bg-transparent p-0 justify-items-center md:justify-items-start">
+                {serviceTabs.map((tab, index) => (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    className={`px-4 py-2 rounded-lg whitespace-nowrap font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)] ${
+                    className={`px-4 py-2 rounded-lg whitespace-nowrap font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)] transition-all w-full ${
+                      index === 9 ? "col-start-2 md:col-start-auto" : ""
+                    } ${
                       tab.id === activeTab
-                        ? "!bg-red !text-neutralwhite"
-                        : "bg-transparent text-neutralblack border border-solid border-red"
+                        ? "!bg-red !text-neutralwhite border border-solid border-red"
+                        : "bg-white text-neutralblack border border-solid border-red"
                     }`}
                     onClick={() => setActiveTab(tab.id)}
                   >

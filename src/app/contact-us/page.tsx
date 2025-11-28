@@ -102,6 +102,26 @@ export default function ContactUs(): JSX.Element {
                       >
                         {location.name}
                       </h2>
+                      <div className="flex items-center gap-6">
+                        <Button className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg">
+                          <a
+                            className="w-full h-full"
+                            href={location.appointmentLink}
+                            target="_blank"
+                          >
+                            Appointment
+                          </a>
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            setIsOpen(true);
+                            setStore(index);
+                          }}
+                          className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg"
+                        >
+                          Write review
+                        </Button>
+                      </div>
                       <div className="flex flex-col items-center gap-4 w-full">
                         <Image
                           className="object-cover"
@@ -168,26 +188,7 @@ export default function ContactUs(): JSX.Element {
                           </div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-6">
-                        <Button className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg">
-                          <a
-                            className="w-full h-full"
-                            href={location.appointmentLink}
-                            target="_blank"
-                          >
-                            Appointment
-                          </a>
-                        </Button>
-                        <Button
-                          onClick={() => {
-                            setIsOpen(true);
-                            setStore(index);
-                          }}
-                          className="bg-red rounded-lg text-neutralwhite font-desktop-body-paragraph-reg"
-                        >
-                          Write review
-                        </Button>
-                      </div>
+
                     </CardContent>
                   </Card>
                 ))}

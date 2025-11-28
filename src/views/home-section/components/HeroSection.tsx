@@ -2,6 +2,7 @@ import bg2 from "@/assets/images/bg-header-2.png";
 import bg3 from "@/assets/images/bg-header-3.png";
 import bg from "@/assets/images/bg1.png";
 import logo from "@/assets/images/logo.png";
+import gcIcon from "@/assets/images/GC Icon.png";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -74,7 +75,10 @@ export default function HeroSection(): JSX.Element {
         </div>
       ))}
       <div className="fixed top-[200px] right-0 z-[100] w-fit flex flex-col gap-2 pt-6 px-2 justify-between items-end w-[60px]">
-        <a href="/contact-us" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><PhoneIcon className="w-6 h-6 text-white" /></a>
+        <Link href="https://www.topcardsolution.com/" target="_blank" className="flex flex-col items-end gap-1 ">
+            <Image src={gcIcon} alt="Gift Card" width={80} height={32} className="object-contain" />
+        </Link>
+        <a href="/contact-us" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center mr-1"><PhoneIcon className="w-6 h-6 text-white" /></a>
         {/* <a href="https://www.google.com/maps?ll=39.192107,-84.235196&z=15&t=m&hl=vi&gl=US&mapclient=embed&cid=8259580881427948819" target="_blank" className="bg-[#F5A3B7] rounded-lg w-[40px] h-[40px] flex items-center justify-center"><MapPinIcon className="w-6 h-6 text-white" /></a> */}
 
       </div>
@@ -107,30 +111,10 @@ export default function HeroSection(): JSX.Element {
         </NavigationMenu>
         <Link href="https://www.topcardsolution.com/" target="_blank" className="mx-2">
           <button
-            className="relative overflow-hidden rounded-full px-4 py-1.5 transition-all duration-300 ease-in-out"
-            style={{
-              backgroundColor: isHovered
-                ? "rgba(0, 0, 0, 0.7)"
-                : "rgba(0, 0, 0, 0.5)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              backdropFilter: "blur(5px)",
-              boxShadow: isHovered
-                ? "0 4px 15px rgba(0, 0, 0, 0.2)"
-                : "0 2px 10px rgba(0, 0, 0, 0.1)",
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="relative overflow-hidden rounded-full px-4 py-1.5 transition-all duration-300 ease-in-out bg-black hover:bg-black/80"
           >
             <span
-              className="font-medium tracking-wider font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]"
-              style={{
-                color: "white",
-                fontSize: "14px",
-                letterSpacing: "1px",
-                transform: isHovered ? "scale(1.05)" : "scale(1)",
-                display: "inline-block",
-                transition: "transform 0.3s ease",
-              }}
+              className="font-medium tracking-wider font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)] text-white"
             >
               GIFT CARD
             </span>
@@ -220,13 +204,23 @@ function MobileNavigation(): JSX.Element {
                 )}
               </React.Fragment>
             ))}
-            
-            <Button onClick={() => {
-              router.push("/contact-us");
-              setIsOpen(false);
-            }} className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)]">
-              BOOK NOW
-            </Button>
+            <div className="flex flex-row items-center gap-3 w-full">
+              <Button onClick={() => {
+                router.push("/contact-us");
+                setIsOpen(false);
+              }} className="px-3 py-1.5 rounded-2xl bg-[#F5A3B7] hover:bg-white text-black font-desktop-body-subtitle-reg text-[length:var(--desktop-body-subtitle-reg-font-size)] tracking-[var(--desktop-body-subtitle-reg-letter-spacing)] leading-[var(--desktop-body-subtitle-reg-line-height)] flex-1">
+                BOOK NOW
+              </Button>
+              <Link 
+                href="https://www.topcardsolution.com/" 
+                target="_blank" 
+                className="flex flex-col items-center gap-2 rounded-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                <Image src={gcIcon} alt="Gift Card" width={80} height={32} className="object-contain" />
+               
+              </Link>
+            </div>
           </nav>
         </div>
       </SheetContent>

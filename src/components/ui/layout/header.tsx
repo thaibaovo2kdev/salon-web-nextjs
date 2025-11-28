@@ -97,8 +97,8 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
             className="object-cover"
             alt="Logo"
             src={logo}
-            width={90}
-            height={44}
+            width={180}
+            height={88}
             priority
           />
           <Drawer >
@@ -131,8 +131,8 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
             className="object-cover"
             alt="Logo"
             src={logo}
-            width={90}
-            height={44}
+            width={180}
+            height={88}
             priority
           />
 

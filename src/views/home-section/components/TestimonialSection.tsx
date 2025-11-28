@@ -58,14 +58,14 @@ export default function TestimonialsSection(): JSX.Element {
         </div> */}
 
         {/* Footer dark section */}
-        <div className="bg-[#151515] pt-16 pb-6">
+        <div className="bg-[#151515] pt-10 pb-6">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap gap-10 lg:gap-16 mb-12 items-start justify-center md:justify-center">
               {/* Logo and contact info */}
               <div className="flex items-center md:items-start flex-col gap-4">
-                <div className="w-[200px] h-[97px] relative mb-4">
+                <div className="w-[200px] relative">
                   <Image
-                    className="object-cover"
+                    className="object-contain"
                     alt="Logo"
                     src={logo}
                     width={200}
@@ -91,7 +91,7 @@ export default function TestimonialsSection(): JSX.Element {
               {/* Business hours */}
 
               {/* Locations with maps */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-16">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-16 pt-8">
                 {locations.map((location, index) => (
                   <div key={index} className="flex flex-col gap-4">
                     <h3 className="text-white text-xl font-medium">
